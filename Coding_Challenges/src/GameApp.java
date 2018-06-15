@@ -8,6 +8,7 @@ public class GameApp {
 		boolean inv_Status = true, start_Status = true;
 		System.out.print("What is your name, adventurer?: ");
 		String player_Name = new Scanner(System.in).nextLine();
+		Scanner input = new Scanner(System.in);
 		
 		while(start_Status) {
 			System.out.println("Choose a starting weapon: ");
@@ -41,6 +42,7 @@ public class GameApp {
 			default:
 				start_Status = false;
 			}
+			break;
 		}
 		System.out.println("- " + player_Name + "'s Inventory and Weapons Management -");
 		while(inv_Status) {
@@ -61,13 +63,17 @@ public class GameApp {
 			System.out.print("What is the name of your weapon?: ");
 			String name = new Scanner(System.in).nextLine();
 			System.out.print("What is the ATK of your weapon?: ");
-			int ATK = new Scanner(System.in).nextInt();
+			//int ATK = new Scanner(System.in).nextInt();
+			int ATK = input.nextInt();
 			System.out.print("What is the DEF of your weapon?: ");
-			int DEF = new Scanner(System.in).nextInt();
+			//int DEF = new Scanner(System.in).nextInt();
+			int DEF = input.nextInt();
 			System.out.print("What is the INT of your weapon?: ");
-			int INT = new Scanner(System.in).nextInt();
+			//int INT = new Scanner(System.in).nextInt();
+			int INT = input.nextInt();
 			System.out.print("What is the DEX of your weapon?: ");
-			int DEX = new Scanner(System.in).nextInt();
+			//int DEX = new Scanner(System.in).nextInt();
+			int DEX = input.nextInt();
 			Weapon weapon = new Weapon(name, ATK, DEF, INT, DEX);
 			inventory.add(weapon);
 			System.out.println("Weapon added to inventory.");

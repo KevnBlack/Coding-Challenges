@@ -2,6 +2,7 @@
 public class Weapon {
 	private String name;
 	private int ATK, DEF, INT, DEX;
+	
 	Weapon(String name, int ATK, int DEF, int INT, int DEX){
 		this.name=name;
 		this.ATK=ATK;
