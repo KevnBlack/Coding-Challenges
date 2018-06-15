@@ -1,6 +1,6 @@
 /**
  * Challenge: Talking Clock
- * Difficult: Easy
+ * Difficulty: Easy
  * @version 1.0
  * @author Kevin Black <kevinandrewblack@live.com>
  * Started: June 11, 2018 (Satisfactory)
