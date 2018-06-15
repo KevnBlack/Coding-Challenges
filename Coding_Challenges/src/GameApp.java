@@ -8,7 +8,8 @@ public class GameApp {
 		boolean inv_Status = true, start_Status = true;
 		System.out.print("What is your name, adventurer?: ");
 		String player_Name = new Scanner(System.in).nextLine();
-		Scanner input = new Scanner(System.in);
+		Scanner input_Name = new Scanner(System.in);
+		Scanner input_Param = new Scanner(System.in);
 		
 		while(start_Status) {
 			System.out.println("Choose a starting weapon: ");
@@ -61,19 +62,15 @@ public class GameApp {
 			System.out.println();
 			System.out.println("- Putting a weapon into your inventory -");
 			System.out.print("What is the name of your weapon?: ");
-			String name = new Scanner(System.in).nextLine();
+			String name = input_Name.nextLine();
 			System.out.print("What is the ATK of your weapon?: ");
-			//int ATK = new Scanner(System.in).nextInt();
-			int ATK = input.nextInt();
+			int ATK = input_Param.nextInt();
 			System.out.print("What is the DEF of your weapon?: ");
-			//int DEF = new Scanner(System.in).nextInt();
-			int DEF = input.nextInt();
+			int DEF = input_Param.nextInt();
 			System.out.print("What is the INT of your weapon?: ");
-			//int INT = new Scanner(System.in).nextInt();
-			int INT = input.nextInt();
+			int INT = input_Param.nextInt();
 			System.out.print("What is the DEX of your weapon?: ");
-			//int DEX = new Scanner(System.in).nextInt();
-			int DEX = input.nextInt();
+			int DEX = input_Param.nextInt();
 			Weapon weapon = new Weapon(name, ATK, DEF, INT, DEX);
 			inventory.add(weapon);
 			System.out.println("Weapon added to inventory.");
@@ -81,7 +78,7 @@ public class GameApp {
 		case 2: 
 			int item_Num=0;
 			System.out.println();
-			if(inventory.size()==0)
+			if(inventory.size()<=0)
 				System.out.println("Inventory is empty.");
 			for(Weapon list : inventory) {
 				System.out.println("Slot [" + item_Num + "]: " + list);
